@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+  <meta charset="UTF-8" />
+  <title>SoulHaven</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+       body {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white; 
+}
+
+    :root{
+      --bg-gradient: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('cyusa.jpg');
+      --accent: #3498db;
+      --card-bg: rgba(255,255,255,0.04);
+      --muted: rgba(255,255,255,0.75);
+      --text: #fff;
+    }
+    /* Theme variants */
+    .theme-calm { --bg-gradient: linear-gradient(180deg, rgba(6,30,63,0.6), rgba(2,10,30,0.6)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=60'); --accent:#7aa2d9; }
+    .theme-dark { --bg-gradient: linear-gradient(180deg, rgba(2,6,23,0.8), rgba(1,2,10,0.9)), url('https://images.unsplash.com/photo-1500674425229-f692875b0ab7?auto=format&fit=crop&w=1600&q=60'); --accent:#6b7280; }
+    .theme-green{ --bg-gradient: linear-gradient(180deg, rgba(2,40,20,0.55), rgba(1,20,10,0.6)), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=60'); --accent:#4caf50; }
+    .theme-sunset{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('munyazikwiye.jpg'); --accent:#ff7a5c; }
+   .theme-calm { --bg-gradient: linear-gradient(180deg, rgba(6,30,63,0.6), rgba(2,10,30,0.6)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=60'); --accent:#7aa2d9; }
+    .theme-cd{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('cd.jpg'); --accent:#0ca70c; }
+     .theme-ab{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('ab.jpg'); --accent:#0ca70c; }
+      .theme-ac{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('ac.jpg'); --accent:#0ca70c; }
+       .theme-r{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('r.jpg'); --accent:#0ca70c; }
+    .theme-a{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('a.jpg'); --accent:#0ca70c; }
+     .theme-b{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('b.jpg'); --accent:#ff7a5c; }
+      .theme-c{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('c.jpg'); --accent:#ff7a5c; }
+       .theme-d{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('d.jpg'); --accent:#ff7a5c; }
+        .theme-e{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('e.jpg'); --accent:#ff7a5c; }
+        .theme-f{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('f.jpg'); --accent:#2ad493; }
+        .theme-g{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('g.jpg'); --accent:#ff7a5c; }
+        .theme-h{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('h.jpg'); --accent:#ff7a5c; }
+        .theme-j{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('j.jpg'); --accent:#ff7a5c; }
+        .theme-k{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('k.jpg'); --accent:#ff7a5c; }
+        .theme-l{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('l.jpg'); --accent:#ff7a5c; }
+        .theme-m{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('m.jpg'); --accent:#ff7a5c; }
+        .theme-n{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('n.jpg'); --accent:#ff7a5c; }
+        .theme-o{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('o.jpg'); --accent:#8d5cff; }
+        .theme-p{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('p.jpg'); --accent:#ff7a5c; }
+        .theme-q{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('q.jpg'); --accent:#ff7a5c; }
+        .theme-s{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('s.jpg'); --accent:#ff7a5c; }
+         .theme-t{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('s.jpg'); --accent:#ff7a5c; }
+          .theme-u{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('t.jpg'); --accent:#ff7a5c; }
+           .theme-v{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('u.jpg'); --accent:#ff7a5c; }
+            .theme-w{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('v.jpg'); --accent:#ff7a5c; }
+             .theme-x{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('w.jpg'); --accent:#ff7a5c; }
+              .theme-y{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('y.jpg'); --accent:#ff7a5c; }
+               .theme-z{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('z.jpg'); --accent:#ff7a5c; }
+                .theme-1{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('1.jpg'); --accent:#ff7a5c; }
+                 .theme-2{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('2.jpg'); --accent:#ff7a5c; }
+                  .theme-3{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('3.jpg'); --accent:#ff7a5c; }
+                   .theme-4{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('4.jpg'); --accent:#ff7a5c; }
+                    .theme-5{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('5.jpg'); --accent:#ff7a5c; }
+                     .theme-6{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('6.jpg'); --accent:#ff7a5c; }
+                      .theme-7{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('7.jpg'); --accent:#ff7a5c; }
+                       .theme-8{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('8.jpg'); --accent:#ff7a5c; }
+                        .theme-9{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('9.jpg'); --accent:#ff7a5c; }
+                         .theme-10{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('10.jpg'); --accent:#ff7a5c; }
+                          .theme-11{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('11.jpg'); --accent:#ff7a5c; }
+                         .theme-12{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('12.jpg'); --accent:#ff7a5c; }
+                          .theme-13{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('13.jpg'); --accent:#ff7a5c; }                 .theme-s{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('s.jpg'); --accent:#ff7a5c; }
+          .theme-14{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('14.jpg'); --accent:#ff7a5c; }
+           .theme-15{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('15.jpg'); --accent:#ff7a5c; }
+             .theme-16{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('16.jpg'); --accent:#ff7a5c; }
+              .theme-17{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('17.jpg'); --accent:#ff7a5c; }
+               .theme-18{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('18.jpg'); --accent:#ff7a5c; }
+                .theme-19{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('19.jpg'); --accent:#ff7a5c; }
+                 .theme-20{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('20.jpg'); --accent:#ff7a5c; }
+                  .theme-21{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('21.jpg'); --accent:#ff7a5c; }
+                   .theme-22{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('22.jpg'); --accent:#ff7a5c; }
+                    .theme-23{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('23.jpg'); --accent:#ff7a5c; }
+                     .theme-24{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('24.jpg'); --accent:#ff7a5c; }
+                      .theme-25{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('25.jpg'); --accent:#ff7a5c; }
+                       .theme-26{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('26.jpg'); --accent:#ff7a5c; }
+                        .theme-27{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('27.jpg'); --accent:#ff7a5c; }
+                         .theme-28{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('28.jpg'); --accent:#80096c; }
+     .theme-29{ --bg-gradient: linear-gradient(180deg, rgba(30,10,20,0.45), rgba(10,2,5,0.6)), url('29.jpg'); --accent:#ff7a5c; }
+
+
+
+    html,body{height:100%;margin:0;font-family:Inter, Arial, sans-serif;color:var(--text);}
+    body{
+      background: var(--bg-gradient);
+      background-size: cover;
+      background-position:center;
+      display:flex;
+      min-height:100vh;
+      overflow:hidden;
+    }
+
+    /* Layout */
+    #sidebar{
+      width:260px;
+      background: rgba(46, 48, 54, 0.55);
+      backdrop-filter: blur(6px);
+      padding:18px 12px;
+      position:fixed;
+      left:-260px;
+      top:0;
+      bottom:0;
+      transition:left .28s ease;
+      z-index:1200;
+      color:var(--text);
+    }
+    #sidebar.show{ left:0; }
+    .logo{ font-weight:800; font-size:18px; margin-bottom:8px; display:flex;align-items:center;gap:10px }
+    .logo .dot{width:36px;height:36px;border-radius:8px;background:var(--accent);display:inline-block}
+
+    #toggleSidebar{
+      position:fixed; left:14px; top:14px; z-index:1300;
+      background:var(--accent); border:0; color:#041226; padding:10px 12px; border-radius:8px; cursor:pointer;
+      box-shadow:0 6px 18px rgba(2,6,23,0.4);
+    }
+
+    #themeSelect { position: fixed; top:14px; right:14px; z-index:1300; padding:8px 10px; border-radius:8px; border:0; background:rgba(0,0,0,0.45); color:var(--text); }
+
+    #sidebar button{ display:block; width:100%; text-align:left; padding:12px 14px; border-radius:8px; border:0; background:transparent; color:var(--text); cursor:pointer; margin:6px 0; }
+    #sidebar button:hover{ background:rgba(255,255,255,0.04) }
+
+    #main{ margin-left:0; padding:22px; flex:1; overflow:auto; transition:margin-left .28s ease; height:100vh; box-sizing:border-box;}
+    #sidebar.show + #main{ margin-left:260px; }
+
+    .card{ background:var(--card-bg); padding:14px; border-radius:12px; margin-bottom:14px; box-shadow:0 6px 20px rgba(2,6,23,0.45); }
+
+    h1,h2{ margin:6px 0 10px 0; }
+    p { margin:0 0 8px 0; color:var(--muted) }
+
+    /* breathing */
+    .breath-wrap{ display:flex; gap:18px; align-items:center; flex-wrap:wrap; }
+    .circle{ width:140px;height:140px;border-radius:50%; display:flex;align-items:center;justify-content:center;font-weight:700; background:radial-gradient(circle at 30% 30%, pink, rgba(122, 14, 95, 0.02)); transition:transform .4s; color:var(--text) }
+    .btn{ padding:10px 12px; border-radius:8px; border:0; cursor:pointer; background:var(--accent); color:#2521e6; font-weight:600; }
+
+    .audio-row{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+    audio{ width:100%; max-width:420px; border-radius:8px; background:rgba(167, 32, 172, 0.2); }
+
+    /* responsive */
+    @media (max-width:900px){
+      #sidebar{ left:-220px; width:220px }
+      #sidebar.show{ left:0 } 
+      #sidebar.show + #main{ margin-left:220px; }
+      .gallery-grid img{ height:120px }
+    }
+     #calculatorIcon {
+      font-size: 60px;
+      cursor: pointer;
+    }
+    .music-section {
+  background: url('ab.jpg') center/cover no-repeat;
+}
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* video iguma inyuma y'ibindi */
+  filter: brightness(60%); /* optional: gutuma text igaragara */
+}
+
+
+
+  </style>
+</head>
+<body class="theme-a">
+
+  <button id="toggleSidebar" title="Menu" onclick="toggleSidebar()">☰ Menu</button>
+
+  <select id="themeSelect" title="Choose theme" aria-label="Theme switcher">
+    <option value="theme-suncloud">sun cloud</option>
+    <option value="theme-calm">Calm Blue</option>
+    <option value="theme-dark">Dark Relax</option>
+    <option value="theme-green">Nature Green</option>
+    <option value="theme-sunset">Sunset Warm</option>
+    <option value="theme-sunset">Sunset Warm</option>
+    <option value="theme-sunset">Sunset Warm</option>
+    <option value="theme-cd">cd</option>
+    <option value="theme-ab">ab</option>
+    <option value="theme-ac">ac</option>
+    <option value="theme-r">r</option>
+    <option value="theme-a">a</option>
+    <option value="theme-b">b</option>
+    <option value="theme-c">c</option>
+    <option value="theme-d">d</option>
+    <option value="theme-e">e</option>
+    <option value="theme-f">f</option>
+    <option value="theme-g">g</option>
+    <option value="theme-h">h</option>
+    <option value="theme-i">i</option>
+    <option value="theme-j">j</option>
+    <option value="theme-k">k</option>
+    <option value="theme-l">l</option>
+    <option value="theme-m">m</option>
+    <option value="theme-n">n</option>
+    <option value="theme-o">o</option>
+    <option value="theme-p">p</option>
+    <option value="theme-q">q</option>
+    <option value="theme-s">s</option>
+    <option value="theme-t">t</option>
+    <option value="theme-u">u</option>
+    <option value="theme-v">v</option>
+    <option value="theme-w">w</option>
+    <option value="theme-x">x</option>
+    <option value="theme-y">y</option>
+    <option value="theme-z">z</option>
+    <option value="theme-1">1</option>
+    <option value="theme-2">2</option>
+    <option value="theme-3">3</option>
+    <option value="theme-4">4</option>
+    <option value="theme-5">5</option>
+    <option value="theme-6">6</option>
+    <option value="theme-7">7</option>
+    <option value="theme-8">8</option>
+    <option value="theme-9">9</option>
+    <option value="theme-10">10</option>
+    <option value="theme-11">11</option>
+    <option value="theme-12">12</option>
+    <option value="theme-13">13</option>
+    <option value="theme-14">14</option>
+    <option value="theme-15">15</option>
+    <option value="theme-16">16</option>
+    <option value="theme-17">17</option>
+    <option value="theme-18">18</option>
+    <option value="theme-19">19</option>
+    <option value="theme-20">20</option>
+    <option value="theme-21">21</option>
+    <option value="theme-22">22</option>
+    <option value="theme-23">23</option>
+    <option value="theme-24">24</option>
+    <option value="theme-25">25</option>
+    <option value="theme-26">26</option>
+    <option value="theme-27">27</option>
+    <option value="theme-28">28</option>
+    <option value="theme-29">29</option>
+
+   
+
+  </select>
+  <video autoplay muted loop id="bg-video">
+  <source src="safe.mp4" type="video/mp4">
+</video>
+
+
+  <aside id="sidebar" aria-label="Main menu"><br><br>
+
+
+    <div class="logo"><span class="dot" aria-hidden="true"></span> SoulHaven</div>
+    <button onclick="showContent('home')">🏠 Home</button>
+    <div style="margin-left:8px;">
+      <button onclick="showContent('words')">🕊 Words of Comfort</button>
+      <button onclick="showContent('breath')">🌿 Breathing & Relax</button>
+      <button onclick="showContent('sounds')">🔔 Meditation Sounds</button>
+      <button onclick="showContent('quotes')">✨ Quotes & Verses</button>
+    </div>
+    <hr style="border-color: rgba(255,255,255,0.04); margin:12px 0;">
+    <button onclick="showContent('movie')">🎬 Movie</button>
+    <button onclick="showContent('music')">🎵 Music</button>
+    <hr style="border-color: rgba(255,255,255,0.04); margin:12px 0;">
+    <button onclick="showContent('about')">ℹ️ About Us</button>
+    <button onclick="showContent('calculator')">🧮 CALCULATOR</button>
+
+   
+</div>
+<p id="myLink"></p>
+
+
+  </aside>
+
+  <main id="main" role="main"><br><br>
+    <div id="content">
+      <h1>Welcome to SoulHaven</h1>
+      <p class="card">Fata umwanya, humeka, wumve amajwi n'amashusho bikunogera. Kanda Menu kugirango ubone ibice byose.</p>
+      <p>click on menu bar and see our service</p>
+      <section id="form">
+    </div>
+  </main>
+
+     <form id="feedbackForm">
+    <h3>🕊️ Siga igitekerezo cyawe</h3>
+    <label for="comment">Ni iyihe track cyangwa video yakugiriye akamaro?</label><br>
+    <textarea id="comment" rows="3" placeholder="Andika hano..."></textarea><br>
+    <button type="button" onclick="sendFeedback()">Ohereza</button>
+  </form>
+  <script>
+    /* --- UI handlers --- */
+    const sidebar = document.getElementById('sidebar');
+    function toggleSidebar(){ sidebar.classList.toggle('show'); }
+
+    // theme switcher
+    const themeSelect = document.getElementById('themeSelect');
+    themeSelect.addEventListener('change', (e)=>{
+      document.body.className = e.target.value;
+    });
+
+    /* --- Content switching --- */
+    const content = document.getElementById('content');
+
+    function showContent(section){
+      // close sidebar for better UX
+      sidebar.classList.remove('show');
+
+      if(section === 'home'){
+        content.innerHTML = `
+          <h1>Welcome to SoulHaven</h1>
+          <div class="card"><p>This is a space free from pressure; it brings peace to your heart and mind. Hit the Menu to explore.</p></div>
+          <div class="card">
+            <h2 class="section-title">Quick Calm (2 min)</h2>
+            <p>close your eyes and follow the beathing excercise 4-4-6: breath 4s — continue 4s — breath out 6s. do it in2 min-3min.</p>
+            <button class="btn" onclick="showContent('breath')">Start Breathing Exercise</button>
+          </div>
+          <footer>
+         <marquee> <div class="card"><p> click on menu bar and saw our service</p></div></marquee>
+          </footer>
+        `;
+        return;
+      }
+
+      if(section === 'purpose'){
+        content.innerHTML = `
+          <h2>❤️ Purpose </h2>
+          <div class="card">
+            <p>this project designed to support people going through difficult times, those experiencing grief, or those seeking mental relaxation..</p>
+            <h3>Slogans of comfort</h3>
+            <ul>
+              <li>“You are not alone — there is a place for your heart to rest.”<br><em>“You are not alone,there is a place where your heart can find rest.”</em></li>
+              <li>“Breathe. Pause. You are allowed to rest.”<br><em>“Pause for a moment. You are granted permission to rest.”</em></li>
+              <li>“Small moments of calm make big differences.”<br><em>“A brief moment of stillness can have a powerful impact.”</em></li>
+              <li>“It’s okay to feel — kindness begins with yourself.”<br><em>“It's okay to feel what you're feeling — kindness begins with you..”em></li>
+              <li>“Hold on to hope — every sunrise brings new chances.”<br><em>“Hold on to hope — the rising sun brings new opportunities.”</em></li>
+            </ul>
+            <p style="margin-top:8px;color:var(--muted)">Use these slogans as banners, social posts, or gentle reminders.</p>
+          </div>
+        `;
+        return;
+      }
+
+      if(section === 'words'){
+        content.innerHTML = `
+          <h2>🕊 Words of Comfort</h2>
+          <div class="card">
+            <p>“You are not alone. Take a moment, breathe, and feel your heart begin to ease.”</p>
+            <p>“This too shall pass. You are stronger than you think.”</p>
+            <p>- "Don't let fear stop you from trying."</p>
+            <p>- "Life isn’t about waiting for the storm to pass, it’s about learning to dance in the rain."</p>
+            <p>- "Success is not final, failure is not fatal: It is the courage to continue that counts."</p>
+            <p>- "Your only limit is your mind."</p>
+            <p>- "Every day is a new beginning. Take a deep breath and start again."</p>
+            <p>- "Believe you can and you're halfway there." </p>
+             <ul>
+              <li>“You are not alone — there is a place for your heart to rest.”<br><em>“You are not alone,there is a place where your heart can find rest.”</em></li>
+              <li>“Breathe. Pause. You are allowed to rest.”<br><em>“Pause for a moment. You are granted permission to rest.”</em></li>
+              <li>“Small moments of calm make big differences.”<br><em>“A brief moment of stillness can have a powerful impact.”</em></li>
+              <li>“It’s okay to feel — kindness begins with yourself.”<br><em>“It's okay to feel what you're feeling — kindness begins with you..”em></li>
+              <li>“Hold on to hope — every sunrise brings new chances.”<br><em>“Hold on to hope — the rising sun brings new opportunities.”</em></li>
+            </ul>
+            <p style="margin-top:8px;color:var(--muted)">Use these slogans as banners, social posts, or gentle reminders.</
+          </div>
+        `;
+        return;
+      }
+
+      if(section === 'breath'){
+        content.innerHTML = `
+          <h2>🌿 Breathing & Relaxation</h2>
+          <div class="card breath-wrap">
+            <div>
+              <div class="circle" id="breathCircle">breath</div>
+              <div style="margin-top:8px;color:var(--muted)">exercise: 4s breath — 4s take it slowely — 6s breath out</div>
+            </div>
+            <div>
+              <p>Click start and follow the circle expansion.</p>
+              <button class="btn" id="breathBtn" onclick="startBreathing()">start breathing</button>
+            </div>
+          </div>
+          <div class="video-grid">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/xgsa2p0lIPY" allowfullscreen></iframe>
+<iframe width="300" height="200" src="https://www.youtube.com/embed/kxtkqoU8a5g" allowfullscreen></iframe>
+<iframe width="300" height="200" src="https://www.youtube.com/embed/IbQiZE6KuWc" allowfullscreen></iframe>
+<iframe width="300" height="200" src="https://www.youtube.com/embed/xgsa2p0lIPY" allowfullscreen></iframe>
+<iframe width="300" height="200" src="https://www.youtube.com/embed/kxtkqoU8a5g" allowfullscreen></iframe>
+<iframe width="300" height="200" src="https://www.youtube.com/embed/IbQiZE6KuWc" allowfullscreen></iframe>
+ <iframe width="300" height="200" src="https://www.youtube.com/embed/rw39Uy-5mwY" allowfullscreen></iframe>
+ <iframe width="300" height="200" src="https://www.youtube.com/embed/lCOF9LN_Zxs" allowfullscreen></iframe>
+<iframe width="300" height="200" src="https://www.youtube.com/embed/mxoMdWvaEEQ" allowfullscreen></iframe>
+<iframe width="300" height="200" src="https://www.youtube.com/embed/HSOtku1j600" allowfullscreen></iframe>
+<iframe width="300" height="200" src="https://www.youtube.com/embed/Er4oqBGuhkw" allowfullscreen></iframe>
+ <iframe width="300" height="200" src="https://www.youtube.com/embed/dtPXEf1R9ZY" allowfullscreen></iframe>
+ <iframe width="300" height="200" src="https://www.youtube.com/embed/Z2GfmFANDlM" allowfullscreen></iframe>
+<iframe width="300" height="200" src="https://www.youtube.com/embed/dnBAU8Co6PA" allowfullscreen></iframe>
+  <iframe width="300" height="200" src="https://www.youtube.com/embed/1ZYbU82GVz4=2Sn1jRxYMjuJEtKu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ <iframe width="300" height="200" src="https://www.youtube.com/embed/UOJ4V3DAAx8=qIKrwj3y4gNzZiZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
+        `;
+        return;
+      }
+
+      if(section === 'sounds'){
+        content.innerHTML = `
+          <h2>🔔 Meditation Sounds</h2>
+          <div class="card audio-row">
+            <div>
+              <p style="margin:6px 0">Soft Piano — Loop</p>
+              <div style="text-align:center;">
+  <a href="https://www.youtube.com/watch?v=TdpBRZ0dZhw" target="_blank">
+    <img src="https://img.youtube.com/vi/TdpBRZ0dZhw/0.jpg" alt="Relaxing Music" width="300" height="200">
+  </a>
+</div>
+
+              <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5L7d0xyaYkrSZ9QRE1FdKB?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/6ZDJ0Iqai28ktvRwj4e4Qu?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        `;
+        return;
+      }
+
+      
+      if(section === 'quotes'){
+        content.innerHTML = `
+          <h2>✨ Inspirational Quotes in RW</h2>
+          <div class="card">
+            <div class="quote"><h2>Matayo 11:28</h2><br>
+“Nimunsange mwese abarushye n’abaremerewe, nanjye nzabaruhura.”
+Iyi mirongo itanga ihumure n’icyizere mu bihe bikomeye. Ushobora kuyisoma, kuyitekerezaho no kuyisengera kugira ngo igufashe kongera kwiyumva neza.
+Niba ushaka indi mirongo ijyanye n’ikibazo runaka (nko gupfusha, uburwayi, kwiheba), ndashobora kuyikurangira. Wambwira uko wiyumva cyangwa icyo urimo guhangana nacyo.”</div>
+            <div class="quote"><h2>Yesaya 41:10</h2><br>
+“Ntutinye kuko ndi kumwe nawe, ntugire ubwoba kuko ndi Imana yawe. Nzaguhumuriza, kandi nzagufasha, nzagushyigikira n’ukuboko kwanjye kw’iburyo gukiranuka.”</div>
+            <div class="quote"> <h2>Zaburi 23:4,</h2><br>
+“Naho nanyura mu gikombe cy’igicucu cy’urupfu, sinzatinya ikibi, cyose kuko ndi kumwe nawe.”</div>
+             <div class="quote"><h2>Zaburi 55:23</h2><br>
+“Ikoreze Uwiteka umutwaro wawe na we azakuramira, Ntabwo azakundira umukiranutsi kunyeganyezwa.”</div>
+              <div class="quote"><h2>Abaroma 15:4</h2><br>
+“Ibyanditswe byanditswe kera byanditswe kugira ngo bitwigishe, kugira ngo binyuze ku kwihangana no ku ihumure rituruka mu Byanditswe tugire ibyiringiro.”</div>
+               <div class="quote"><h2>Yeremiya 29:11</h2><br>
+“Kuko nzi imigambi mbafitiye,” ni ko Uwiteka avuga, “ni imigambi y’amahoro si iy’ibibi, kugira ngo mbagire ejo hazaza n’ibyiringiro.”</div>
+          
+          <h2>✨ Inspirational Quotes in  ENG</h2>
+          <div class="quote">. <h2>Isaiah 41:10</h2>
+"Do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you..."</div>
+          <div class="quote"><h2>Psalm 34:18</h2>
+"The Lord is close to the brokenhearted and saves those who are crushed in spirit."</div>
+          <div class="quote">. <h2>Matthew 11:28</h2>
+"Come to me, all you who are weary and burdened, and I will give you rest."</div>
+          <div class="quote"><h2>Psalm 23:1-4</h2>
+"The Lord is my shepherd; I shall not want… Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me."</div>
+          <div class="quote"><h2>Jeremiah 29:11</h2>
+"For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future."</div>
+          <div class="quote"><h2>2 Corinthians 1:3-4</h2>
+"God comforts us in all our troubles so that we can comfort others..."</div>
+          <div class="quote">. <h2>Romans 8:38-39</h2>
+"Nothing can separate us from the love of God."</div>
+          <div class="quote"><h2>Psalm 147:3</h2>
+"He heals the brokenhearted and binds up their wounds."</div>
+          <div class="quote"><h2>John 14:27</h2>
+"Peace I leave with you; my peace I give you… Do not let your hearts be troubled and do not be afraid."</div>
+          <div class="quote"><h2>Philippians 4:6-7</h2>
+"Do not worry about anything… and the peace of God will guard your hearts and minds."</div>
+</div>
+        `;
+        return;
+      }
+
+      if(section === 'movie'){
+        content.innerHTML = `
+          <h2>🎬 Movie & Relax Clips</h2>
+          <div class="card">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/EXeTwQWrcwY" title="Trailer" frameborder="0" allowfullscreen></iframe>
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/8ugaeA-nMTc" title="Trailer 2" frameborder="0" allowfullscreen></iframe>
+             <video width="300" height="200" controls>
+          <source src="A dog journy.mp4" type="video/mp4">
+          <source src="safety.mp4" type="video/mp4">
+        </video>
+   <h2>safety</h2>
+        <video width="300" height="200" controls>
+          <source src="safety.mp4" type="video/mp4">
+        </video>
+
+        <video width="300" height="200" controls>
+          <source src="midnight-sun.mp4" type="video/mp4">
+        </video>
+
+        <video width="300" height="200" controls>
+          <source src="sarafina.mp4" type="video/mp4">
+        </video>
+
+        <video width="300" height="200" controls>
+          <source src="Annie.mp4" type="video/mp4">
+        </video>
+
+        <video width="300" height="200" controls>
+          <source src="A MAN called otto.mp4" type="video/mp4">
+        </video>
+
+        <video width="300" height="200" controls>
+          <source src="The-Mountain-Between-us.mp4" type="video/mp4">
+        </video>
+          </div>
+          <img src= url('munyazikwiye.jpg');
+        `;
+        return;
+      }
+
+      if(section === 'music'){
+        content.innerHTML = `
+          <h2>🎵 Music</h2>
+
+          <div class="card audio-row">
+
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2HbKqm4o0w5wEeEFXm2sD4?utm_source=generator" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0y1QJc3SJVPKJ1OvFmFqe6?utm_source=generator" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/xgsa2p0lIPY" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/CedhfuMMRNk" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/35AdtzquJYg/71pf0LoNrGccGhiy" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/PTotFu9NJ6I=UXjwjkBLs-9YQFJr" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/RJBkZukjltA=yHYX3tGbLuTkP3sz" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/P8QgAhhh-HM=oX1Yv1HWZpPAJg3T" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/_JJt3CI4Fhk=QDv8TLmncYjBpNWu" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/2AH5t_o7lmg=UDUBXBH0RDFYrPI7" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/r_s9rszKTBE=7b1ZsnM90uDvqLoi" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/GIDiI5kyBDQ=W3Gv6SvEVjeJSX27" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/oUFJJNQGwhk=Z1u6soCxNr7LyfxO" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/ryenmS_sKtY=A4UhxxOqc-VGSuOq" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/0kvZDA4_cec=W0w2J2AOBJ_gTMp3" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/kxtkqoU8a5g=UNlw2yeEu3VVTVkD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/0GWX8sysRac=ei4a3MTt2nXcpbLz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/Fjb99SVqM5w=fzFOt2JYwmdweDFE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/A0j06l8H1os=ZaztSlczCLMOD2C-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/MWPYhebILb4=VyBjfFqb4rJg9PqQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/hCrtcVDgCGw=8_IhrL0YJCvZYeze" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/5-ZiKXrnvog=Dqq3nu9Rzq3pwH_d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/FtMwqvE0EAg=8cvSIeSBFbFvtBu2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/ScywH5NcTQk=QAxgHD0PAzmsAlq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/CdWpV9fvrnM=DNk13M3cyqzd-wri" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/2JYNXTCOFL0=XtfwVRwU9F8xG3Ws" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/iWy4W5JLcNo=1-uNc-iVDQVFv8iB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/78bpIziExqiI9qztvNFlQu?utm_source=generator" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/53iuhJlwXhSER5J2IYYv1W?utm_source=generator" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/0fTSzq9jAh4c36UVb4V7CB?utm_source=generator" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2Sxjg8HWalAx6PgN7DNrx6?utm_source=generator" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/1wsvIpY9lcDGtgNkv3SvJB?utm_source=generator" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/7slkKqovPwMfegfiv8huwZ?utm_source=generator" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3Qm7f9a7lJT1NnWWgX9sty?utm_source=generator" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2l4NXsodALj9zpR01AoQpC?utm_source=generator" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2l4NXsodALj9zpR01AoQpC?utm_source=generator" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2JFlS0uqU3qYlBTPmqCPLK?utm_source=generator" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/30bz48tNheigpZZ3Od0Qa2?utm_source=generator" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3gC3hlgNjDj51QP4UKH8QU?utm_source=generator" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/7KwbS2y5QhnDJgTjjBDHyL?utm_source=generator&theme=0" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        
+        `;
+        return;
+      }
+      if(section === 'calculator'){
+        content.innerHTML = `
+       <h2> 🧮 EASY USE CALCULTOR</h2>
+       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="calculator.html"><b><h1>calculator</h1></b></a>
+         `;
+        return;
+          document.getElementById("calculatorIcon").addEventListener("click", function() {
+      // Fungura calculator yawe (page cyangwa app)
+      window.location.href = "calculator.html"; // Hindura iyi URL ukurikije aho calculator yawe iri
+    });
+
+      }
+
+  document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const message = document.getElementById("message").value;
+    alert(`Murakoze ${name}! Ubutumwa bwawe bwakiriwe:\n"${message}"`);
+  });
+
+   function sendFeedback() {
+      let comment = document.getElementById("comment").value;
+      if (comment.trim() === "") {
+        alert("Andika igitekerezo mbere yo kohereza!");
+      } else {
+        alert("Urakoze kubw’igitekerezo cyawe 💚");
+        document.getElementById("feedback").value = "";
+      }
+    }
+
+
+
+      // default
+      content.innerHTML = `<h1>Welcome!</h1><p class="card">Hit the Menu to explore sections.</p>`;
+    }
+
+    /* --- Breathing animation logic --- */
+    let breathing=false, breathTimer=null;
+    function startBreathing(){
+      const btn = document.getElementById('breathBtn');
+      const circle = document.getElementById('breathCircle');
+      if(!circle) return;
+      if(breathing){
+        breathing=false; clearInterval(breathTimer); circle.style.transform='scale(1)'; circle.innerText='breathing'; if(btn) btn.innerText='start breath'; return;
+      }
+      breathing=true; if(btn) btn.innerText='stop';
+      let t=0;
+      breathTimer = setInterval(()=>{
+        t++; const cycle = t % 14;
+        if(cycle<4){ const s = 1 + cycle*0.04; circle.style.transform = 'scale('+s+')'; circle.innerText = 'breath'; }
+        else if(cycle<8){ circle.style.transform='scale(1.16)'; circle.innerText='take it slowely'; }
+        else { const ex = cycle - 8; const s = 1 + (4 - ex)*0.04; circle.style.transform='scale('+s+')'; circle.innerText='breath out'; }
+      },1000);
+    }
+
+
+    // pause audio on blur
+    window.addEventListener('blur', ()=> document.querySelectorAll('audio').forEach(a=>a.pause()) );
+
+    // initialize default view
+    showContent('home');
+    function sendFeedback() {
+      let comment = document.getElementById("comment").value;
+      if (comment.trim() === "") {
+        alert("Andika igitekerezo mbere yo kohereza!");
+      } else {
+        alert("Urakoze kubw’igitekerezo cyawe 💚");
+        document.getElementById("comment").value = "";
+      }
+    }
+  </script>
+  <footer>
+    <p>&copy; 2025 SOULHAVEN</p>
+  </footer>
+</body>
+</html>
